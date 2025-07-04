@@ -1,16 +1,11 @@
-# Compiled class file
+##########################################
+# 🎯 Compilados e pacotes Java
+##########################################
+
+# Compiled class files
 *.class
 
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# Arquivos JAR, WAR, EAR e outros pacotes
 *.jar
 *.war
 *.nar
@@ -19,6 +14,76 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# BlueJ
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Virtual machine crash logs
 hs_err_pid*
 replay_pid*
+
+##########################################
+# 🛠️ Maven
+##########################################
+
+/target/
+/pom.xml.tag
+/pom.xml.releaseBackup
+/pom.xml.versionsBackup
+/release.properties
+dependency-reduced-pom.xml
+
+##########################################
+# 💻 IntelliJ IDEA
+##########################################
+
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+##########################################
+# 🪟 Eclipse (caso alguém use)
+##########################################
+
+.project
+.classpath
+.settings/
+
+##########################################
+# 📝 Logs e arquivos temporários
+##########################################
+
+*.log
+*.swp
+*.swo
+
+##########################################
+# 🍎 macOS
+##########################################
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Arquivos de metadata do Finder
+._*
+
+# Trash do usuário
+.Trashes
+
+# Spotlight
+.Spotlight-V100
+.DocumentRevisions-V100
+.fseventsd
+
+##########################################
+# 🪟 Windows
+##########################################
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
