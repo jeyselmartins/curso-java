@@ -1,40 +1,22 @@
 package org.example;
 
-import java.sql.*;
+import org.example.dao.AlunoDAO;
+import org.example.dao.exceptions.AlunoRepetidoException;
+import org.example.dao.exceptions.DAOException;
+import org.example.model.Aluno;
 
+public class App {
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        String url = "jdbc:mysql://localhost:3306/aula1";
-        String user = "root";
-        String password = "a";
-
-        // Conexão
-        try (
-
-                Connection conn = DriverManager.getConnection(url, user, password)) {
-                if (conn != null) {
-                    System.out.println("Conexão estabelecida com sucesso!");
-                    PreparedStatement ps = conn.prepareStatement("SELECT * FROM ESTUDANTE");
-                    ResultSet rs = ps.executeQuery();
-                    while(rs.next()){//iterator
-                       String nome =  rs.getString("NOME");
-                        System.out.println(nome);
-                    }
-                    conn.close();
-                }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.err.println("Erro ao conectar no banco: " + e.getMessage());
-
+        public static void main(String[] args) {
+            AlunoDAO dao = new AlunoDAO();
+            try {
+                dao.cadastrar(new Aluno("Jeysel Martins", "72774010187", 43));
+            }catch (DAOException e){
+                e.printStackTrace();
+                System.out.println("Atenção! Houve um problema ao cadastrar o aluno no banco de dados... contate o adminsitrador!!");
+            }catch (AlunoRepetidoException alunoRepetidoException){
+                alunoRepetidoException.printStackTrace();
+                System.out.println("Atenção, Aluno repetido!!");
+            }
         }
-        System.exit(0);
-
     }
-}
