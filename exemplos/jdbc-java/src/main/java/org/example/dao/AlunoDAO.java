@@ -31,8 +31,6 @@ public class AlunoDAO implements DAO{
             e.printStackTrace();
             throw new DAOException();
         }
-
-
     }
 
     @Override
