@@ -10,7 +10,7 @@ public class Aluno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 120)
+    @Column( nullable = false, length = 120)
     private String nome;
 
     @Column(unique = true, length = 14)
@@ -24,6 +24,7 @@ public class Aluno {
         this.nome = nome;
         this.cpf = cpf;
         this.idade = idade;
+
     }
 
     public Long getId() { return id; }

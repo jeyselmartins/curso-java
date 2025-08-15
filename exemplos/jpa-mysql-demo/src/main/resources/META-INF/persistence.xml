@@ -20,4 +20,5 @@
       <property name="hibernate.hikari.maximumPoolSize" value="5"/>
     </properties>
   </persistence-unit>
+
 </persistence>

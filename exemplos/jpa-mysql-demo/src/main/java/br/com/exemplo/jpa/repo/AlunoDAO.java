@@ -5,20 +5,20 @@ import jakarta.persistence.EntityManager;
 
 import java.util.List;
 
-public class AlunoRepository {
+public class AlunoDAO {
 
     private final EntityManager em;
 
-    public AlunoRepository(EntityManager em) {
+    public AlunoDAO(EntityManager em) {
         this.em = em;
     }
 
     public Aluno salvar(Aluno e) {
-        em.getTransaction().begin();
+        em.getTransaction().begin();//abrir a transacao
         if (e.getId() == null) {
             em.persist(e);
         } else {
-            e = em.merge(e);
+            e = em.merge(e);//update
         }
         em.getTransaction().commit();
         return e;
@@ -26,9 +26,10 @@ public class AlunoRepository {
 
     public Aluno buscarPorId(Long id) {
         return em.find(Aluno.class, id);
-    }
+    } //reflection e annotation
 
     public List<Aluno> listarTodos() {
+        //ESTUDAR JPQL
         return em.createQuery("select e from Aluno e order by e.id", Aluno.class)
                  .getResultList();
     }

@@ -1,4 +1,4 @@
 br/com/exemplo/jpa/entity/Aluno.class
 br/com/exemplo/jpa/config/JpaUtil.class
-br/com/exemplo/jpa/repo/AlunoRepository.class
+br/com/exemplo/jpa/repo/AlunoDAO.class
 br/com/exemplo/jpa/Main.class
